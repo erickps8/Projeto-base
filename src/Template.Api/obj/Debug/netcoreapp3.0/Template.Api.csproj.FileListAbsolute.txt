@@ -1,0 +1,17 @@
+C:\Users\erick.sousa\Documents\MeusProjetos\Template\src\Template.Api\bin\Debug\netcoreapp3.0\appsettings.Development.json
+C:\Users\erick.sousa\Documents\MeusProjetos\Template\src\Template.Api\bin\Debug\netcoreapp3.0\appsettings.json
+C:\Users\erick.sousa\Documents\MeusProjetos\Template\src\Template.Api\bin\Debug\netcoreapp3.0\Properties\launchSettings.json
+C:\Users\erick.sousa\Documents\MeusProjetos\Template\src\Template.Api\bin\Debug\netcoreapp3.0\Template.Api.exe
+C:\Users\erick.sousa\Documents\MeusProjetos\Template\src\Template.Api\obj\Debug\netcoreapp3.0\Template.Api.csprojAssemblyReference.cache
+C:\Users\erick.sousa\Documents\MeusProjetos\Template\src\Template.Api\obj\Debug\netcoreapp3.0\Template.Api.AssemblyInfoInputs.cache
+C:\Users\erick.sousa\Documents\MeusProjetos\Template\src\Template.Api\obj\Debug\netcoreapp3.0\Template.Api.AssemblyInfo.cs
+C:\Users\erick.sousa\Documents\MeusProjetos\Template\src\Template.Api\obj\Debug\netcoreapp3.0\Template.Api.RazorTargetAssemblyInfo.cache
+C:\Users\erick.sousa\Documents\MeusProjetos\Template\src\Template.Api\obj\Debug\netcoreapp3.0\staticwebassets\Template.Api.StaticWebAssets.Manifest.cache
+C:\Users\erick.sousa\Documents\MeusProjetos\Template\src\Template.Api\obj\Debug\netcoreapp3.0\staticwebassets\Template.Api.StaticWebAssets.xml
+C:\Users\erick.sousa\Documents\MeusProjetos\Template\src\Template.Api\bin\Debug\netcoreapp3.0\Template.Api.deps.json
+C:\Users\erick.sousa\Documents\MeusProjetos\Template\src\Template.Api\bin\Debug\netcoreapp3.0\Template.Api.runtimeconfig.json
+C:\Users\erick.sousa\Documents\MeusProjetos\Template\src\Template.Api\bin\Debug\netcoreapp3.0\Template.Api.runtimeconfig.dev.json
+C:\Users\erick.sousa\Documents\MeusProjetos\Template\src\Template.Api\bin\Debug\netcoreapp3.0\Template.Api.dll
+C:\Users\erick.sousa\Documents\MeusProjetos\Template\src\Template.Api\bin\Debug\netcoreapp3.0\Template.Api.pdb
+C:\Users\erick.sousa\Documents\MeusProjetos\Template\src\Template.Api\obj\Debug\netcoreapp3.0\Template.Api.dll
+C:\Users\erick.sousa\Documents\MeusProjetos\Template\src\Template.Api\obj\Debug\netcoreapp3.0\Template.Api.pdb

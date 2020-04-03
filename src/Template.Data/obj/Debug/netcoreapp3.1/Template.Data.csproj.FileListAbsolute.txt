@@ -1,0 +1,11 @@
+C:\Users\erick.sousa\Documents\MeusProjetos\Template\src\Template.Data\bin\Debug\netcoreapp3.1\Template.Data.deps.json
+C:\Users\erick.sousa\Documents\MeusProjetos\Template\src\Template.Data\bin\Debug\netcoreapp3.1\Template.Data.dll
+C:\Users\erick.sousa\Documents\MeusProjetos\Template\src\Template.Data\bin\Debug\netcoreapp3.1\Template.Data.pdb
+C:\Users\erick.sousa\Documents\MeusProjetos\Template\src\Template.Data\bin\Debug\netcoreapp3.1\Template.Business.dll
+C:\Users\erick.sousa\Documents\MeusProjetos\Template\src\Template.Data\bin\Debug\netcoreapp3.1\Template.Business.pdb
+C:\Users\erick.sousa\Documents\MeusProjetos\Template\src\Template.Data\obj\Debug\netcoreapp3.1\Template.Data.csprojAssemblyReference.cache
+C:\Users\erick.sousa\Documents\MeusProjetos\Template\src\Template.Data\obj\Debug\netcoreapp3.1\Template.Data.AssemblyInfoInputs.cache
+C:\Users\erick.sousa\Documents\MeusProjetos\Template\src\Template.Data\obj\Debug\netcoreapp3.1\Template.Data.AssemblyInfo.cs
+C:\Users\erick.sousa\Documents\MeusProjetos\Template\src\Template.Data\obj\Debug\netcoreapp3.1\Template.Data.csproj.CopyComplete
+C:\Users\erick.sousa\Documents\MeusProjetos\Template\src\Template.Data\obj\Debug\netcoreapp3.1\Template.Data.dll
+C:\Users\erick.sousa\Documents\MeusProjetos\Template\src\Template.Data\obj\Debug\netcoreapp3.1\Template.Data.pdb

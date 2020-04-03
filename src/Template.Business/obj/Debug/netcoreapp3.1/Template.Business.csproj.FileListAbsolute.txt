@@ -1,0 +1,7 @@
+C:\Users\erick.sousa\Documents\MeusProjetos\Template\src\Template.Business\bin\Debug\netcoreapp3.1\Template.Business.deps.json
+C:\Users\erick.sousa\Documents\MeusProjetos\Template\src\Template.Business\bin\Debug\netcoreapp3.1\Template.Business.dll
+C:\Users\erick.sousa\Documents\MeusProjetos\Template\src\Template.Business\bin\Debug\netcoreapp3.1\Template.Business.pdb
+C:\Users\erick.sousa\Documents\MeusProjetos\Template\src\Template.Business\obj\Debug\netcoreapp3.1\Template.Business.AssemblyInfoInputs.cache
+C:\Users\erick.sousa\Documents\MeusProjetos\Template\src\Template.Business\obj\Debug\netcoreapp3.1\Template.Business.AssemblyInfo.cs
+C:\Users\erick.sousa\Documents\MeusProjetos\Template\src\Template.Business\obj\Debug\netcoreapp3.1\Template.Business.dll
+C:\Users\erick.sousa\Documents\MeusProjetos\Template\src\Template.Business\obj\Debug\netcoreapp3.1\Template.Business.pdb
