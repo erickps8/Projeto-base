@@ -4,7 +4,7 @@ using Microsoft.AspNetCore.Http;
 using System;
 using System.Collections.Generic;
 using System.Security.Claims;
-using Template.Identity.Interfaces;
+using Template.Business.Interfaces;
 
 namespace Template.Identity.Exensions
 {

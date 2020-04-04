@@ -11,7 +11,6 @@ using System.Threading.Tasks;
 using Template.Business.Interfaces;
 using Template.Identity.Data;
 using Template.Identity.Exensions;
-using Template.Identity.Interfaces;
 using Template.Identity.ViewModels;
 
 namespace Template.Api.Controllers
@@ -23,7 +22,6 @@ namespace Template.Api.Controllers
         private readonly SignInManager<CustomIdentity> _signInManager;
         private readonly UserManager<CustomIdentity> _userManager;
         private readonly AppSettings _appSettings;
-        //private readonly ILogger _logger;
         public AuthController(INotificator notificator,
                               SignInManager<CustomIdentity> signInManager,
                               UserManager<CustomIdentity> userManager,

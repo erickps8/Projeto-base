@@ -7,7 +7,7 @@ using Microsoft.AspNetCore.Mvc;
 using Template.Api.Dtos;
 using Template.Business.Interfaces;
 using Template.Business.Models;
-using Template.Identity.Interfaces;
+using Template.Identity.Exensions;
 
 namespace Template.Api.Controllers
 {
@@ -63,7 +63,7 @@ namespace Template.Api.Controllers
 
             return CustomResponse(exempleDto);
         }
-
+        [ClaimsAuthorize("Administrador", "Administrador")]
         [HttpDelete("{id:guid}")]
         public async Task Remover(Guid id)
         {
