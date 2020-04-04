@@ -6,7 +6,6 @@ using Template.Business.Servicecs;
 using Template.Data.Context;
 using Template.Data.Repository;
 using Template.Identity.Exensions;
-using Template.Identity.Interfaces;
 
 namespace Template.Api.Configuration
 {

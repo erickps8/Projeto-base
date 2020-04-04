@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Security.Claims;
 
-namespace Template.Identity.Interfaces
+namespace Template.Business.Interfaces
 {
     public interface IUser
     {

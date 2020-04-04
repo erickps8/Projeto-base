@@ -4,7 +4,6 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.ModelBinding;
 using Template.Business.Interfaces;
 using Template.Business.Notifications;
-using Template.Identity.Interfaces;
 
 namespace Template.Api.Controllers
 {
