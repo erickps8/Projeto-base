@@ -11,14 +11,16 @@ namespace Template.Business.Servicecs
     public class ExempleService : BaseService, IExempleService
     {
         private readonly IExempleRepository _exempleRepository;
-        public ExempleService(IExempleRepository exempleRepository, INotificator notificator) : base(notificator)
+        private readonly IUser _user;
+        public ExempleService(IExempleRepository exempleRepository, INotificator notificator, IUser user) : base(notificator)
         {
             _exempleRepository = exempleRepository;
+            _user = user;
         }
         public async Task<bool> Adicionar(Exemple exemple)
         {
             if (!ExecutarValidacao(new ExempleValidation(), exemple)) return false;
-
+            
             await _exempleRepository.Adicionar(exemple);
             return true;
         }
@@ -32,7 +34,7 @@ namespace Template.Business.Servicecs
         }
 
         public async Task<bool> Remover(Guid id)
-        {
+        {            
             await _exempleRepository.Remover(id);
             return true;
         }
