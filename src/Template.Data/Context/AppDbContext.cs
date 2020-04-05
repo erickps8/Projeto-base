@@ -10,7 +10,7 @@ namespace Template.Data.Context
         {
         }
 
-        public DbSet<Exemple> Exemple { get; set; }
+        public DbSet<Example> Exemple { get; set; }
 
         protected override void OnModelCreating(ModelBuilder builder)
         {

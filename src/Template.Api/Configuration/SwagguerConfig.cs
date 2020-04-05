@@ -4,7 +4,7 @@ using Microsoft.OpenApi.Models;
 
 namespace Template.Api.Configuration
 {
-    public static class SwegguerConfig
+    public static class SwagguerConfig
     {
         public static IServiceCollection AddSwaggerConfig(this IServiceCollection services)
         {
