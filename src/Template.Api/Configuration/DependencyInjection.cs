@@ -14,8 +14,8 @@ namespace Template.Api.Configuration
         public static IServiceCollection ResolveDependencies(this IServiceCollection services)
         {
             services.AddScoped<AppDbContext>();
-            services.AddScoped<IExempleRepository, ExempleRepository>();
-            services.AddScoped<IExempleService, ExempleService>();
+            services.AddScoped<IExampleRepository, ExampleRepository>();
+            services.AddScoped<IExampleService, ExampleService>();
             
 
 

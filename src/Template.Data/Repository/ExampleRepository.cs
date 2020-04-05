@@ -7,9 +7,9 @@ using Template.Data.Context;
 
 namespace Template.Data.Repository
 {
-    public class ExempleRepository : Repository<Exemple>, IExempleRepository
+    public class ExampleRepository : Repository<Example>, IExampleRepository
     {
-        public ExempleRepository(AppDbContext myDbContext) : base(myDbContext)
+        public ExampleRepository(AppDbContext myDbContext) : base(myDbContext)
         {
 
         }

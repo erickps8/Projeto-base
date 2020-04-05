@@ -8,7 +8,7 @@ namespace Template.Api.Configuration
     {
         public AutoMapper()
         {
-            CreateMap<Exemple, ExempleDto>().ReverseMap();
+            CreateMap<Example, ExampleDto>().ReverseMap();
         }
     }
 }

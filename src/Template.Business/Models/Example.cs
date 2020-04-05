@@ -1,10 +1,11 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Text;
 
-namespace Template.Api.Dtos
+namespace Template.Business.Models
 {
-    public class ExempleDto
+    public class Example : Entity
     {
-        public Guid Id { get; set; }
         public string Name { get; set; }
         public string Description { get; set; }
     }

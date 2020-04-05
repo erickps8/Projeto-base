@@ -1,13 +1,10 @@
 ﻿using FluentValidation;
-using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace Template.Business.Models.Validations
 {
-    public class ExempleValidation : AbstractValidator<Exemple>
+    public class ExampleValidation : AbstractValidator<Example>
     {
-        public ExempleValidation()
+        public ExampleValidation()
         {
             RuleFor(c => c.Name)
                 .NotEmpty().WithMessage("O campo {PropertyName} precisa ser fornecido");

@@ -14,13 +14,13 @@ namespace Template.Api.Controllers
     [Authorize]
     [Route("api/[controller]")]
     [ApiController]
-    public class ExempleController : MainController
+    public class ExampleController : MainController
     {
-        private readonly IExempleRepository _exempleRepository;
-        private readonly IExempleService _exempleService;
+        private readonly IExampleRepository _exempleRepository;
+        private readonly IExampleService _exempleService;
         private readonly IMapper _mapper;
 
-        public ExempleController(IExempleRepository exemplerepository, IExempleService exempleSrevice, IMapper mapper, INotificator notificator, IUser user) : base(notificator, user)
+        public ExampleController(IExampleRepository exemplerepository, IExampleService exempleSrevice, IMapper mapper, INotificator notificator, IUser user) : base(notificator, user)
         {
             _exempleRepository = exemplerepository;
             _exempleService = exempleSrevice;
@@ -28,28 +28,28 @@ namespace Template.Api.Controllers
         }
 
         [HttpGet("{id:guid}")]
-        public async Task<ExempleDto> ObterPorId(Guid Id)
+        public async Task<ExampleDto> ObterPorId(Guid Id)
         {
-            return _mapper.Map<ExempleDto>(await _exempleRepository.ObterPorId(Id));
+            return _mapper.Map<ExampleDto>(await _exempleRepository.ObterPorId(Id));
         }
 
         [AllowAnonymous]
         [HttpGet]
-        public async Task<IEnumerable<ExempleDto>> ObterTodos()
+        public async Task<IEnumerable<ExampleDto>> ObterTodos()
         {
-            return _mapper.Map<IEnumerable<ExempleDto>>(await _exempleRepository.ObterTodos());
+            return _mapper.Map<IEnumerable<ExampleDto>>(await _exempleRepository.ObterTodos());
         }
         [HttpPost]
-        public async Task<ActionResult<ExempleDto>> Adicionar(ExempleDto exempleDto)
+        public async Task<ActionResult<ExampleDto>> Adicionar(ExampleDto exempleDto)
         {
             if (!ModelState.IsValid) return CustomResponse(ModelState);
 
-            await _exempleService.Adicionar(_mapper.Map<Exemple>(exempleDto));
+            await _exempleService.Adicionar(_mapper.Map<Example>(exempleDto));
 
             return CustomResponse(exempleDto);
         }
         [HttpPut("{id:guid}")]
-        public async Task<ActionResult<ExempleDto>> Atualizar(Guid id, ExempleDto exempleDto)
+        public async Task<ActionResult<ExampleDto>> Atualizar(Guid id, ExampleDto exempleDto)
         {
             if (id != exempleDto.Id)
             {
@@ -59,7 +59,7 @@ namespace Template.Api.Controllers
 
             if (!ModelState.IsValid) return CustomResponse(ModelState);
 
-            await _exempleService.Atualizar(_mapper.Map<Exemple>(exempleDto));
+            await _exempleService.Atualizar(_mapper.Map<Example>(exempleDto));
 
             return CustomResponse(exempleDto);
         }
