@@ -5,7 +5,7 @@
 - EndPoints de exemplo para nortear o desenvolvedor diante da arquitetura;
 
 ### Requisitos
-- Dot .Net 3.1
+- Dot .Net Core 3.1
 - Postgres Sql
 
 ### Instalação
