@@ -10,18 +10,18 @@ using Template.Data.Context;
 namespace Template.Data.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20200403210035__initial_")]
-    partial class _initial_
+    [Migration("20220219181302_Init")]
+    partial class Init
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
-                .HasAnnotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn)
-                .HasAnnotation("ProductVersion", "3.1.3")
-                .HasAnnotation("Relational:MaxIdentifierLength", 63);
+                .UseIdentityByDefaultColumns()
+                .HasAnnotation("Relational:MaxIdentifierLength", 63)
+                .HasAnnotation("ProductVersion", "5.0.0");
 
-            modelBuilder.Entity("Template.Business.Models.Exemple", b =>
+            modelBuilder.Entity("Template.Business.Models.Example", b =>
                 {
                     b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
