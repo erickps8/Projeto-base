@@ -5,7 +5,7 @@
 - EndPoints de exemplo para nortear o desenvolvedor diante da arquitetura;
 
 ### Requisitos
-- Dot .Net Core 3.1
+- Dot .Net Core 5.0
 - Postgres Sql
 
 ### Instalação
@@ -28,6 +28,17 @@
 		
 - Ainda no console informe o projeto padrão como [NomeDoProjeto].Data para criar as tabelas do contexto do restante do projeto(no caso a tabela de exemplo).
 	> update-database -Context AppDbContext
+
+- #### No vsCode - dotnetCli
+1. com o vsCode, abra o projeto [NomeDoProjeto].Api acesse o arquivo appsettings.json e ajuste a connectionString com as configuração do seu banco de dados.
+
+2. Abra o console do vsCode:
+- No console informe o projeto padrão como [NomeDoProjeto].Identity para criar as tabelas do contexto do Identity.
+	> dotnet ef database update --context ApplicationDbContext
+		
+- Ainda no console informe o projeto padrão como [NomeDoProjeto].Data para criar as tabelas do contexto do restante do projeto(no caso a tabela de exemplo).
+	> dotnet ef database update --context AppDbContext
+
 
 ### Pronto!
 - Agora basta definir [NomeDoProjeto].Api como projeto padrão e executar.
