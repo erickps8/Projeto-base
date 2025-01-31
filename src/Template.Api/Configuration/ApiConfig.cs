@@ -1,26 +1,42 @@
-﻿using Microsoft.AspNetCore.Builder;
+﻿using Asp.Versioning;
+using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 
 namespace Template.Api.Configuration
 {
     public static class ApiConfig
     {
+        const string _myAllowSpecificOrigins = "myAllowSpecificOrigins";
         public static IServiceCollection WebApiConfig(this IServiceCollection services)
         {
-            services.AddMvc();
+            services.AddApiVersioning(options =>
+            {
+                options.AssumeDefaultVersionWhenUnspecified = true;
+                options.DefaultApiVersion = new ApiVersion(1, 0);
+                options.ReportApiVersions = true;
+            }).AddApiExplorer(options =>
+            {
+                options.GroupNameFormat = "'v'VVV";
+                options.SubstituteApiVersionInUrl = true;
+            });
 
+            services.AddCors(option =>
+            {
+                option.AddPolicy(name: _myAllowSpecificOrigins,
+                    policy =>
+                    {
+                        policy.AllowAnyOrigin()
+                        .AllowAnyHeader()
+                        .AllowAnyMethod();
+                    });
+            });
             services.Configure<ApiBehaviorOptions>(options =>
             {
                 options.SuppressModelStateInvalidFilter = true;
 
             });
-
-            services.AddCors();
 
             return services;
         }

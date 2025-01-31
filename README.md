@@ -1,46 +1,74 @@
-# Projeto-base
-- Projeto base para criação de API Dot Net Core
-- Documentação com swagger já configurado;
-- Sistema de autorização e autenticação com Identity baseado em claims;
-- EndPoints de exemplo para nortear o desenvolvedor diante da arquitetura;
+# Projeto Base para API .NET 8
 
-### Requisitos
-- Dot .Net Core 5.0
-- Postgres Sql
+Este repositório fornece uma base inicial para a criação de uma API utilizando .NET 8. A estrutura inclui funcionalidades de autenticação e autorização com Identity, documentação Swagger integrada e exemplos de endpoints para facilitar o desenvolvimento.
 
-### Instalação
-- Primeiro precisamos obter o pack de instalação da API, abra o prompt de comando de sua preferência (cmd, power shell, console, gitBash, etc.) e execute o comando:
-	> dotnet new -i Erick.Pinheiro.Template.Api
-	
-- Ainda no prompt de comando, navegue até a pasta onde deseja guardar o projeto e execute o seguinte comando:
-	> dotnet  new doom-template -n [NomeDoProjeto] 
-	
-- Pronto, agora a base da sua API está disponível e só precisa de pequenas configurações.
+## Funcionalidades
+- **Autenticação e autorização** com Identity, utilizando claims para controle de acesso.
+- **Documentação automática** com Swagger, já configurada.
+- **EndPoints de exemplo** para facilitar o desenvolvimento e a integração com a arquitetura.
 
-### Configurações
+## Requisitos
+- **.NET 8** (Certifique-se de ter o SDK do .NET 8 instalado)
+- **PostgreSQL** (ou outro banco de dados, ajustando a string de conexão)
 
-- #### No Visual Studio
-1. com o Visual Studio aberto, abra o projeto [NomeDoProjeto].Api acesse o arquivo appsettings.json e ajuste a connectionString com as configuração do seu banco de dados.
+## Instalação
 
-2. Abra o console do Visual Studio:
-- No console informe o projeto padrão como [NomeDoProjeto].Identity para criar as tabelas do contexto do Identity.
-	> update-database -Context ApplicationDbContext
-		
-- Ainda no console informe o projeto padrão como [NomeDoProjeto].Data para criar as tabelas do contexto do restante do projeto(no caso a tabela de exemplo).
-	> update-database -Context AppDbContext
+### Passo 1: Instalar o template
+1. Abra o prompt de comando de sua preferência (cmd, PowerShell, Console, GitBash, etc.) e execute o seguinte comando para instalar o template:
+    ```bash
+    dotnet new -i Erick.Pinheiro.Template.Api
+    ```
 
-- #### No vsCode - dotnetCli
-1. com o vsCode, abra o projeto [NomeDoProjeto].Api acesse o arquivo appsettings.json e ajuste a connectionString com as configuração do seu banco de dados.
+### Passo 2: Criar o novo projeto
+2. Navegue até o diretório onde deseja criar o novo projeto e execute o comando:
+    ```bash
+    dotnet new doom-template -n [NomeDoProjeto]
+    ```
 
-2. Abra o console do vsCode:
-- No console informe o projeto padrão como [NomeDoProjeto].Identity para criar as tabelas do contexto do Identity.
-	> dotnet ef database update --context ApplicationDbContext
-		
-- Ainda no console informe o projeto padrão como [NomeDoProjeto].Data para criar as tabelas do contexto do restante do projeto(no caso a tabela de exemplo).
-	> dotnet ef database update --context AppDbContext
+Agora você terá a base do seu projeto criada e pronta para configurar.
 
+## Configuração
 
-### Pronto!
-- Agora basta definir [NomeDoProjeto].Api como projeto padrão e executar.
-- Abrirá o navegador com o Swagger e os EndPoints de autenticação de usuário e os de exemplo.
-- Navegue pelo código analisando os exemplos para desenvolver os seus próprios métodos e por fim exclua todos os métodos de exemplo.
+### No Visual Studio
+
+1. Com o Visual Studio aberto, abra o projeto `[NomeDoProjeto].Api`. Em seguida, edite o arquivo `appsettings.json` e ajuste a `ConnectionString` para o seu banco de dados.
+   
+2. Abra o **Console do Gerenciador de Pacotes** (Package Manager Console) e execute os seguintes comandos para aplicar as migrações e criar as tabelas no banco de dados:
+    - Para criar as tabelas do contexto do **Identity**:
+      ```bash
+      update-database -Context ApplicationDbContext
+      ```
+
+    - Para criar as tabelas do restante do projeto (exemplo de tabela):
+      ```bash
+      update-database -Context AppDbContext
+      ```
+
+### No VSCode (usando a dotnet CLI)
+
+1. Com o VSCode aberto, abra o projeto `[NomeDoProjeto].Api` e edite o arquivo `appsettings.json` para ajustar a `ConnectionString` com as configurações do seu banco de dados.
+
+2. Abra o terminal integrado do VSCode e execute os seguintes comandos:
+    - Para criar as tabelas do contexto do **Identity**:
+      ```bash
+      dotnet ef database update --context ApplicationDbContext
+      ```
+
+    - Para criar as tabelas do restante do projeto (exemplo de tabela):
+      ```bash
+      dotnet ef database update --context AppDbContext
+      ```
+
+## Execução
+
+Agora que as configurações estão concluídas, basta:
+
+1. Definir o projeto `[NomeDoProjeto].Api` como projeto padrão.
+2. Executar o projeto. Isso abrirá o navegador com a documentação Swagger.
+3. Na documentação Swagger, você encontrará os endpoints de autenticação de usuário e os exemplos de endpoints para guiar o desenvolvimento.
+4. Analise os exemplos de código e desenvolva seus próprios métodos. **Lembre-se de excluir os métodos de exemplo quando terminar a implementação**.
+
+## Conclusão
+Sua API está pronta para ser personalizada e expandida conforme necessário. Aproveite a estrutura inicial para integrar suas funcionalidades e construir a lógica de negócios.
+
+Se tiver dúvidas ou precisar de mais informações, consulte a [documentação do .NET 8](https://learn.microsoft.com/dotnet/).

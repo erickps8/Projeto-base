@@ -9,10 +9,10 @@ using Template.Business.Interfaces;
 using Template.Business.Models;
 using Template.Identity.Exensions;
 
-namespace Template.Api.Controllers
+namespace Template.Api.Controllers.v1
 {
     [Authorize]
-    [Route("api/[controller]")]
+    [Route("v{version:apiVersion}/[controller]")]
     [ApiController]
     public class ExampleController : MainController
     {

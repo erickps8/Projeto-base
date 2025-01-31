@@ -13,9 +13,9 @@ using Template.Identity.Data;
 using Template.Identity.Exensions;
 using Template.Identity.ViewModels;
 
-namespace Template.Api.Controllers
+namespace Template.Api.Controllers.v1
 {
-    [Route("api/[controller]")]
+    [Route("v{version:apiVersion}/[controller]")]
     [ApiController]
     public class AuthController : MainController
     {

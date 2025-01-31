@@ -1,9 +1,13 @@
 {
     "$schema": "http://json.schemastore.org/template",
     "author": "Erick Pinheiro de Sousa",
-    "classifications": [ "Web", "WebApi", "C#" ],
+    "classifications": [
+        "Web",
+        "WebApi",
+        "C#"
+    ],
     "identity": "Erick.Pinheiro.Template.API",
-    "name": "DooM Template - Erick pinheiro - Web API .NET Core 3 ",
+    "name": "DooM Template - Erick pinheiro - Web API .NET 8.0 ",
     "shortName": "doom-template",
     "tags": {
         "language": "C#",
@@ -11,4 +15,4 @@
     },
     "sourceName": "Template",
     "preferNameDirectory": true
-  }
+}
