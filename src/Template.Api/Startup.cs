@@ -1,3 +1,4 @@
+using Asp.Versioning.ApiExplorer;
 using AutoMapper;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -36,7 +37,7 @@ namespace Template.Api
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
-        public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
+        public void Configure(IApplicationBuilder app, IWebHostEnvironment env, IApiVersionDescriptionProvider provider)
         {
             if (env.IsDevelopment())
             {
@@ -44,13 +45,13 @@ namespace Template.Api
             }
 
             app.UseHttpsRedirection();
-
-            app.UseSwaggerConfig();
+            // Configure the HTTP request pipeline.
 
             app.UseRouting();
             app.UseCors(x => x.AllowAnyOrigin().AllowAnyMethod().AllowAnyHeader());
             app.UseAuthentication();
             app.UseAuthorization();
+            app.UseSwaggerConfig(provider);
             app.UseMvcConfiguration();
         }
     }

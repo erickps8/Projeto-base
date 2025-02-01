@@ -1,23 +1,59 @@
-﻿using Microsoft.AspNetCore.Builder;
+﻿using Asp.Versioning.ApiExplorer;
+using Microsoft.AspNetCore.Builder;
+using Microsoft.AspNetCore.Mvc.ApiExplorer;
 using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.Options;
 using Microsoft.OpenApi.Models;
+using Swashbuckle.AspNetCore.SwaggerGen;
+using System;
+using System.Linq;
 
 namespace Template.Api.Configuration
 {
     public static class SwagguerConfig
     {
+        public class ConfigureSwaggerOptions : IConfigureOptions<SwaggerGenOptions>
+        {
+            readonly IApiVersionDescriptionProvider provider;
+            public ConfigureSwaggerOptions(IApiVersionDescriptionProvider provider)
+            {
+                this.provider = provider;
+            }
+
+            public void Configure(SwaggerGenOptions options)
+            {
+                foreach (var description in provider.ApiVersionDescriptions)
+                {
+                    options.SwaggerDoc(description.GroupName, CreateInforApiVersion(description));
+                }
+            }
+            static OpenApiInfo CreateInforApiVersion(ApiVersionDescription description)
+            {
+                var info = new OpenApiInfo()
+                {
+                    Title = "API - Template",
+                    Version = description.ApiVersion.ToString(),
+                    Description = "criar uma descrição para a api"
+                };
+
+                if (description.IsDeprecated)
+                {
+                    info.Description += "Esta versão está obsoleta!";
+                }
+
+                return info;
+            }
+        }
         public static IServiceCollection AddSwaggerConfig(this IServiceCollection services)
         {
             services.AddSwaggerGen(c =>
             {
-                c.SwaggerDoc("v1", new OpenApiInfo { Title = "Template", Version = "v1" });
-
-                c.AddSecurityDefinition("basic", new OpenApiSecurityScheme
+                c.OperationFilter<SwaggerDefaultValues>();
+                c.AddSecurityDefinition("bearer", new OpenApiSecurityScheme
                 {
                     Name = "Authorization",
-                    //Type = SecuritySchemeType.Http,
                     Type = SecuritySchemeType.ApiKey,
-                    Scheme = "basic",
+                    Scheme = "bearer",
                     In = ParameterLocation.Header,
                     Description = "Insira o token JWT desta maneira: Bearer {seu token}."
 
@@ -31,10 +67,10 @@ namespace Template.Api.Configuration
                                 Reference = new OpenApiReference
                                 {
                                     Type = ReferenceType.SecurityScheme,
-                                    Id = "basic"
+                                    Id = "bearer"
                                 }
                             },
-                            new string[] {}
+                           Array.Empty<string>()
                     }
                 });
 
@@ -43,16 +79,42 @@ namespace Template.Api.Configuration
             return services;
         }
 
-        public static IApplicationBuilder UseSwaggerConfig(this IApplicationBuilder app)
+        public class SwaggerDefaultValues : IOperationFilter
+        {
+            public void Apply(OpenApiOperation operation, OperationFilterContext context)
+            {
+                var apiDescription = context.ApiDescription;
+                operation.Deprecated = apiDescription.IsDeprecated();
+
+                if (operation.Parameters == null)
+                {
+                    return;
+                }
+
+                foreach (var parameter in operation.Parameters)
+                {
+                    var description = apiDescription.ParameterDescriptions.First(p => p.Name == parameter.Name);
+
+                    if (parameter.Description == null)
+                        parameter.Description = description.ModelMetadata?.Description;
+
+                    parameter.Required |= description.IsRequired;
+                }
+            }
+        }
+
+        public static IApplicationBuilder UseSwaggerConfig(this IApplicationBuilder app, IApiVersionDescriptionProvider provider)
         {
             app.UseSwagger();
             app.UseSwaggerUI(c =>
             {
-                c.SwaggerEndpoint("/swagger/v1/swagger.json", "Template");
-                //c.RoutePrefix = string.Empty;
+                foreach (var description in provider.ApiVersionDescriptions.Select(x => x.GroupName))
+                {
+                    c.SwaggerEndpoint($"swagger/{description}/swagger.json", description.ToUpperInvariant());
+                    c.RoutePrefix = string.Empty;
+                }
             });
             return app;
         }
-
     }
 }
